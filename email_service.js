@@ -24,7 +24,10 @@ export async function sendLeadEmail(lead) {
   try {
     await resend.emails.send({
       from: FROM,
-      to: process.env.EMAIL_USER,
+      to: [
+        process.env.EMAIL_USER,
+        "hellorivercitygutterwash@gmail.com"
+      ],
       subject: `New Gutter Lead: ${lead.name}`,
       text: `
 New lead:
@@ -53,7 +56,10 @@ export async function sendCustomerEmail(lead) {
   try {
     await resend.emails.send({
       from: FROM,
-      to: lead.email,
+      to: [
+        lead.email,
+        "hellorivercitygutterwash@gmail.com"
+      ],
       subject: "We received your request!",
       text: `
 Hi ${lead.name},
@@ -87,7 +93,10 @@ export async function sendBookingEmail(appointment) {
   try {
     await resend.emails.send({
       from: FROM,
-      to: appointment.email,
+      to: [
+        appointment.email,
+        "hellorivercitygutterwash@gmail.com"
+      ],
       subject: "Your appointment is booked!",
       text: `
 Hi ${appointment.name},
@@ -116,7 +125,10 @@ export async function sendDayBeforeEmail(appointment) {
   try {
     await resend.emails.send({
       from: FROM,
-      to: appointment.email,
+      to: [
+        appointment.email,
+        "hellorivercitygutterwash@gmail.com"
+      ],
       subject: "Reminder: Your appointment is tomorrow",
       text: `
 Hi ${appointment.name},
@@ -144,7 +156,10 @@ export async function sendMorningOfEmail(appointment) {
   try {
     await resend.emails.send({
       from: FROM,
-      to: appointment.email,
+      to: [
+        appointment.email,
+        "hellorivercitygutterwash@gmail.com"
+      ],
       subject: "Reminder: Your appointment is today",
       text: `
 Good morning ${appointment.name},
